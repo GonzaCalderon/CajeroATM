@@ -17,7 +17,7 @@ public class LectorDeArchivos {
         String alias;
         double saldo;
         Map<String, Cuenta> cuentas = new TreeMap<>();
-        try (BufferedReader lectorDeCuentas = new BufferedReader(new FileReader("ArchivoDeCuentas"))) {
+        try (BufferedReader lectorDeCuentas = new BufferedReader(new FileReader("CajeroATM/ArchivoDeCuentas"))) {
             String unaLinea;
             while ((unaLinea = lectorDeCuentas.readLine()) != null) {
                 if (!unaLinea.isEmpty()) {
@@ -55,7 +55,7 @@ public class LectorDeArchivos {
         String cuit;
         String[] datos;
         Map<String, Tarjeta> tarjetas = new TreeMap<>();
-        try (BufferedReader lectorDeTarjetas = new BufferedReader(new FileReader("ArchivoDeValidacionDeTarjetas"))) {
+        try (BufferedReader lectorDeTarjetas = new BufferedReader(new FileReader("CajeroATM/ArchivoDeValidacionDeTarjetas"))) {
             String unaLinea;
             while ((unaLinea = lectorDeTarjetas.readLine()) != null) {
                 if (!unaLinea.isEmpty()) {
@@ -77,7 +77,7 @@ public class LectorDeArchivos {
         String alias;
         Map<String, List<Cliente>> clientes = new TreeMap<>();
         List<Cliente> datosDeClientes;
-        try (BufferedReader lectorDeClientes = new BufferedReader(new FileReader("ArchivoDeClientes"))) {
+        try (BufferedReader lectorDeClientes = new BufferedReader(new FileReader("CajeroATM/ArchivoDeClientes"))) {
 
             String unaLinea;
             while ((unaLinea = lectorDeClientes.readLine()) != null) {
@@ -134,7 +134,7 @@ public class LectorDeArchivos {
         double importe;
         String[] datos;
         Map<String, Operacion> movimientos = new TreeMap<>();
-        try (BufferedReader lectorDeMovimientos = new BufferedReader(new FileReader("ArchivoDeMovimientos"))) {
+        try (BufferedReader lectorDeMovimientos = new BufferedReader(new FileReader("CajeroATM/ArchivoDeMovimientos"))) {
 
             String unaLinea;
             while ((unaLinea = lectorDeMovimientos.readLine()) != null) {

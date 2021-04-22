@@ -4,14 +4,13 @@ package Cajero;
 import java.io.*;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
 
 public class EscritorDeArchivos {
 
     BufferedWriter escritor;
 
     public void guardarArchivoDeCuentas(Map<String, Cuenta> archivoDeCuentas) throws IOException {
-        escritor = new BufferedWriter(new FileWriter("ArchivoDeCuentas"));
+        escritor = new BufferedWriter(new FileWriter("CajeroATM/ArchivoDeCuentas"));
         for (Cuenta unaCuenta :
                 archivoDeCuentas.values()) {
             if(unaCuenta.getClass() == CAEnPesos.class){

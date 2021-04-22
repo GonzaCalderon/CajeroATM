@@ -1,6 +1,10 @@
 package Cajero;
 
+import org.junit.Assert;
 import org.junit.Test;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ATMTests {
 

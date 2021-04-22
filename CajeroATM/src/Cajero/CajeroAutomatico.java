@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 
 
@@ -28,9 +27,10 @@ public class CajeroAutomatico {
     }
     public void iniciarSesion() throws Exception {
         unaSesion = new Sesion();
-        String numeroDeTarjeta = unTeclado.llamarTecladoAlfanumerico("Ingrese su tarjeta (Para la simulacion de esta instancia le pedimos que ingrese el cuit asociado a su tarjeta");
+        String numeroDeTarjeta = unTeclado.llamarTecladoAlfanumerico("Ingrese su tarjeta " +
+                "(Para la simulacion de esta instancia le pedimos que ingrese el cuit asociado a su tarjeta)" + "\n debe contener 10 digitos");
         Tarjeta tarjetaDelCliente = unaSesion.getArchivoDeValidacionDeTarjetas().get(numeroDeTarjeta);
-        String pin = unTeclado.llamarTecladoAlfanumerico("Ingrese el pin");
+        String pin = unTeclado.llamarTecladoAlfanumerico("Ingrese el pin" + "\n debe contener 4 digitos");
 
         unaSesion.setClienteEnSesion(tarjetaDelCliente);
         inicializarOperacion(tarjetaDelCliente, pin);
